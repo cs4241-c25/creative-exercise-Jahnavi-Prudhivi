@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Multimedia Exercise</title>
+    <style>
+        canvas {
+            border: 2px solid black;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+<canvas id="myCanvas" width="600" height="400"></canvas>
+
+<script>
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // Draw Text
+    ctx.font = "30px Arial";
+    ctx.fillStyle = "blue";
+    ctx.fillText("Canvas Multimedia Exercise", 50, 50);
+
+    // Draw Rectangle
+    ctx.fillStyle = "green";
+    ctx.fillRect(50, 100, 150, 100);
+
+    // Draw Circle
+    ctx.beginPath();
+    ctx.arc(300, 150, 50, 0, 2 * Math.PI);
+    ctx.fillStyle = "red";
+    ctx.fill();
+
+    // Draw Triangle
+    ctx.beginPath();
+    ctx.moveTo(450, 200);
+    ctx.lineTo(500, 100);
+    ctx.lineTo(550, 200);
+    ctx.closePath();
+    ctx.fillStyle = "purple";
+    ctx.fill();
+
+    // Draw Gradient Rectangle
+    const gradient = ctx.createLinearGradient(50, 300, 300, 300);
+    gradient.addColorStop(0, "pink");
+    gradient.addColorStop(1, "orange");
+
+    ctx.fillStyle = gradient;
+    ctx.fillRect(50, 300, 250, 50);
+</script>
+</body>
+</html>
